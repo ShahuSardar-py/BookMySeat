@@ -1,0 +1,258 @@
+.seat-booking {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.seat-booking.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.booking-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.back-btn:hover:not(:disabled) {
+  background-color: #764ba2;
+  transform: translateX(-3px);
+}
+
+.back-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.booking-header h2 {
+  margin: 0;
+  color: #333;
+  flex: 1;
+}
+
+.booking-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.stat-value.available {
+  color: #51cf66;
+}
+
+.stat-value.reserved {
+  color: #ffd93d;
+}
+
+.stat-value.booked {
+  color: #ff6b6b;
+}
+
+.seats-container {
+  margin: 2rem 0;
+}
+
+.screen-label {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.row-label {
+  width: 30px;
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.seats {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.seat-available {
+  background-color: #51cf66;
+  border-color: #40c057;
+  color: white;
+}
+
+.seat-available:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(81, 207, 102, 0.4);
+}
+
+.seat-available:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+.seat-reserved {
+  background-color: #ffd93d;
+  border-color: #ffc107;
+  color: #333;
+  cursor: not-allowed;
+}
+
+.seat-booked {
+  background-color: #ff6b6b;
+  border-color: #ff5252;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-seat {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.legend-seat.seat-available {
+  background-color: #51cf66;
+  border-color: #40c057;
+}
+
+.legend-seat.seat-reserved {
+  background-color: #ffd93d;
+  border-color: #ffc107;
+}
+
+.legend-seat.seat-booked {
+  background-color: #ff6b6b;
+  border-color: #ff5252;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .booking-stats {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .seat {
+    width: 35px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+
+  .booking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .booking-header h2 {
+    order: -1;
+  }
+}
